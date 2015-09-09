@@ -28,10 +28,10 @@ func uninhibit(o dbus.BusObject, cookie uint32) {
 }
 
 const (
-	inhibitLogout     = 2 ^ iota // 1: Inhibit logging out
-	inhibitUserSwitch            // 2: Inhibit user switching
-	inhibitSuspend               // 4: Inhibit suspending the session or computer
-	inhibitIdle                  // 8: Inhibit the session being marked as idle
+	inhibitLogout     = 1 << iota // 1: Inhibit logging out
+	inhibitUserSwitch             // 2: Inhibit user switching
+	inhibitSuspend                // 4: Inhibit suspending the session or computer
+	inhibitIdle                   // 8: Inhibit the session being marked as idle
 )
 
 var (

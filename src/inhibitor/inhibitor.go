@@ -1,3 +1,8 @@
+// inhibitor will inhibit a gnome session the same way Chromium does when a
+// YouTube video is played. When run without options it'll run indefinitely.
+// With the -p and -d options you can make it poll for presence of another
+// process, to end whenever that process disappears. The -p option defines the
+// PID of the process to check, and the -d option sets the polling interval.
 package main
 
 import (
@@ -48,6 +53,7 @@ func main() {
 	}
 	o := conn.Object("org.gnome.SessionManager", "/org/gnome/SessionManager")
 	inhibit(o, "inhibitor", "inhibiting", inhibitIdle)
+	inhibit(o, "inhibitor", "inhibiting", inhibitSuspend)
 	if *pid == 0 {
 		fmt.Fprint(os.Stderr, "Inhibiting until this process is killed\n")
 		select {}

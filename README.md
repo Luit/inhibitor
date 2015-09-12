@@ -12,7 +12,7 @@ configured.
 
 ## Installation
 
-I use (gb)[https://getgb.io/] because I like it, so you can clone and `gb
+I use [gb](https://getgb.io/) because I like it, so you can clone and `gb
 build` if you like it too.
 
 Another way is to simply `go get`, hoping the up-to-date libraries don't break
